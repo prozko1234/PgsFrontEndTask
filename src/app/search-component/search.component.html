@@ -1,0 +1,39 @@
+<div class="search-container">
+    <div class="search-box hidden">
+        <div>
+            <h2>iTunes api example</h2>
+            <form class="search-form center">
+                <div class="hidden center">
+                  <input type="text" class="search-input" placeholder="Search songs...">
+                   <button class="search-button" type='button'>
+                      search
+                   </button>
+                </div>
+              </form> 
+            <p class="small-description center">Search by song title, author, song number, lyrics, catalog or copyright owner</p>
+        </div>
+    </div>
+</div>
+<div class="search-result-container">
+    <div class="search-result-box center">
+        <p class="found-songs-info">Found {{songsNum}} {{textSongs}}</p>
+        <div class="search-result-container">
+            
+            <div class="song-box">
+                <a class="song-url" href="{{itunesUrl}}">
+                <div class="song-thumbnail left">
+                    <img src="{{thumbnailUrl}}" alt="">
+                </div>
+                <div class="song-description-container left">
+                    <div class="song-description-box">
+                        <p class="song-name">{{songName}}</p>
+                        <hr class="center">
+                        <p class="song-author">{{songAuthor}}</p>
+                    </div>
+                </div>
+            </a>
+            </div>
+
+        </div>
+    </div>
+</div>
