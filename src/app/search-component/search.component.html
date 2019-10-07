@@ -1,11 +1,11 @@
 <div class="search-container">
     <div class="search-box hidden">
         <div>
-            <h2>iTunes api example</h2>
+            <h2 (submit) = "getSearchResult()">iTunes api example</h2>
             <form class="search-form center">
                 <div class="hidden center">
-                  <input type="text" class="search-input" placeholder="Search songs...">
-                   <button class="search-button" type='button'>
+                  <input [(ngModel)]="searchInputText" type="text" class="search-input" name="search-field" placeholder="Search songs...">
+                   <button (click) = "getSearchResult(searchInputText)"  class="search-button" type='submit'>
                       search
                    </button>
                 </div>
@@ -19,20 +19,21 @@
         <p class="found-songs-info">Found {{songsNum}} {{textSongs}}</p>
         <div class="search-result-container">
             
-            <div class="song-box">
-                <a class="song-url" href="{{itunesUrl}}">
+            <div *ngFor="let item of songsList" class="song-box">
+                <a class="song-url" href="{{item.itunesUrl}}">
                 <div class="song-thumbnail left">
-                    <img src="{{thumbnailUrl}}" alt="">
+                    <img src="{{item.thumbnailUrl}}" alt="Song's thumbnail">
                 </div>
                 <div class="song-description-container left">
                     <div class="song-description-box">
-                        <p class="song-name">{{songName}}</p>
+                        <p class="song-name">{{item.songName}}</p>
                         <hr class="center">
-                        <p class="song-author">{{songAuthor}}</p>
+                        <p class="song-author">{{item.songAuthor}}</p>
                     </div>
                 </div>
             </a>
             </div>
+            <h2 class="center" *ngIf="songsNum == 0"> Sorry, no matches found</h2>
 
         </div>
     </div>
