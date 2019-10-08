@@ -1,7 +1,7 @@
 <div class="search-container">
     <div class="search-box hidden">
         <div>
-            <h2 (submit) = "getSearchResult()">iTunes api example</h2>
+            <h2>iTunes api example</h2>
             <form class="search-form center">
                 <div class="hidden center">
                   <input [(ngModel)]="searchInputText" type="text" class="search-input" name="search-field" placeholder="Search songs...">
@@ -16,13 +16,13 @@
 </div>
 <div class="search-result-container">
     <div class="search-result-box center">
-        <p class="found-songs-info">Found {{songsNum}} {{textSongs}}</p>
+        <p class="found-songs-info">{{textSongs}}</p>
         <div class="search-result-container">
-            
-            <div *ngFor="let item of songsList" class="song-box">
+            <h2 class="center" *ngIf="songsNum == 0"> Sorry, no matches found</h2>
+            <div *ngFor="let item of songsList | paginate: { itemsPerPage: 9, currentPage: p}" class="song-box">
                 <a class="song-url" href="{{item.itunesUrl}}">
                 <div class="song-thumbnail left">
-                    <img src="{{item.thumbnailUrl}}" alt="Song's thumbnail">
+                    <img src="{{item.thumbnailUrl}}">
                 </div>
                 <div class="song-description-container left">
                     <div class="song-description-box">
@@ -33,8 +33,19 @@
                 </div>
             </a>
             </div>
-            <h2 class="center" *ngIf="songsNum == 0"> Sorry, no matches found</h2>
-
+            <div *ngIf="songsNum != 0" class="center pagination">
+                <!-- <pagination-controls class="center" (pageChange)="p = $event"></pagination-controls> -->
+                <pagination-template class="center" #api="paginationApi" (pageChange)="p = $event">
+                   <div class="center pagination hidden disable-selection">
+                        <div class="pagination-previous left" [class.disabled]="api.isFirstPage()">
+                            <a (click)="api.previous()"> &#60;&#60; previous </a>
+                        </div>
+                        <div class="pagination-next left disable-selection" [class.disabled]="api.isLastPage()">
+                            <a (click)="api.next()"> next >> </a>
+                        </div>
+                    </div>
+                </pagination-template>
+            </div>
         </div>
     </div>
 </div>

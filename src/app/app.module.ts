@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from './header-component/header.component';
 import { SearchComponent} from './search-component/search.component';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FooterComponentComponent } from './footer-component/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    FooterComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

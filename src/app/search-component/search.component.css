@@ -1,0 +1,156 @@
+
+.search-result-container{
+    background-color: white;
+}
+
+.search-container {
+    background-color: #2d2d2d;
+}
+
+.search-box{
+    width: 45%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.small-description {
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+
+.search-input, .search-button {
+    float: left;
+}
+
+.search-button {
+  height: 3em;
+  width: 5.75em;
+  background-color: #f7941d;
+  outline: none;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.search-input{
+    line-height: 2em;
+    height: 3em;
+    width: 15em;
+    border: none;
+    text-align: left;
+    text-decoration: none; 
+    border-radius: 20px 0 0 20px;
+    padding: 0 0 0 20px;
+}
+
+.search-form {
+    width: 22em;
+    margin-top: 5%;
+}
+
+.search-result-box {
+    text-align: center;
+    color: black;
+    width: 90%;
+}
+
+.found-songs-info {
+    margin: 1.2% 1.2% 0 1.2%;
+}
+
+.search-result-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+}
+
+.song-box {
+    overflow: hidden;
+    width: 500px;
+    height: 12em;
+    margin: 2% 1% 2% 1%;
+    background-color: #f0f0f0;
+}
+
+.song-box:hover {
+    cursor: pointer;
+    border: solid #f7941d;
+    box-shadow: 10px 10px 5px #f0f0f0;
+}
+
+.song-thumbnail {
+    width: 27%;
+    height: 70%;
+    border: solid black;
+    margin: 5%;
+}
+
+.song-description-container {
+    width: 50%;
+    height: 60%;
+    margin: 0 2% 0 0;
+    position: relative;
+}
+
+.song-description-container > .song-description-box > hr {
+    margin-top: 5%;
+    margin-bottom: 4%;
+    width: 60%;
+}
+
+.song-description-box {
+    margin-top: 20%;
+    margin-bottom: 25%;
+}
+
+.song-thumbnail > img {
+    width: 100%;
+    height: 100%;
+}
+
+.song-url {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.ngx-pagination li:not(.pagination-previous):not(.pagination-next) {
+    display: none;
+  }
+
+
+
+.pagination {
+    width: 100%;
+}
+
+.pagination-box {
+    width: 100%;
+}
+
+.pagination-previous, .pagination-next {
+    width: 100px;
+    height: 2em;
+    margin: 15% 7px 7px 7px;
+    padding: 7px;
+    background-color: #f7941d;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.pagination-previous:hover, .pagination-next:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 750px){
+    .search-box {
+        width: 100%
+    }
+}

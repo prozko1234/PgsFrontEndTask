@@ -1,0 +1,17 @@
+.header{
+    background-color: white;
+}
+
+.header {
+    height: 5em;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-container, .search-container, .search-result-conteiner {
+    width: 100%;
+}
+
+.logo-img {
+    height: 100%;
+}
